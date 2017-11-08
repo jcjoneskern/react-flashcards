@@ -7,8 +7,8 @@ const Card = (props) => {
     return (
         <div className="card">
             { props.showFront ?
-            <p>{ props.card.front }</p> :
-            <p>{ props.card.back }</p>  
+            <h1>{ props.card.front }</h1> :
+            <h1>{ props.card.back }</h1>  
             }
         </div>
     );
