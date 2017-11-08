@@ -6,10 +6,9 @@ import React from 'react';
 const Card = (props) => {
     return (
         <div className="card">
-            { props.showFront ?
-            <h1>{ props.card.front }</h1> :
-            <h1>{ props.card.back }</h1>  
-            }
+            <h1>
+                { props.showFront ? props.card.front : props.card.back }
+            </h1>
         </div>
     );
 }
