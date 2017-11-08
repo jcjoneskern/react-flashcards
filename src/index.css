@@ -5,15 +5,14 @@ body {
 }
 
 p {
-  margin: 0;
+  margin: 3rem auto 1rem;
+  width: 50%;
+  border: 2px solid black;
+  height: 350px;
+  text-align: center;
+  line-height: 350px;
 } 
 
 .App {
-  margin: 0 auto;
-  width: 60%;
-  border: 2px solid black;
-  height: 400px;
-  margin-top: 3rem;
   text-align: center;
-  line-height: 300px;
 }

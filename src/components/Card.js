@@ -4,12 +4,14 @@ import React from 'react';
 // front or back will be passed to the card as props
 
 const Card = (props) => {
-    return <div className="card">
-        { props.showFront ?
-          <p>{ props.card.front }</p> :
-          <p>{ props.card.back }</p>  
-        }
-    </div>
+    return (
+        <div className="card">
+            { props.showFront ?
+            <p>{ props.card.front }</p> :
+            <p>{ props.card.back }</p>  
+            }
+        </div>
+    );
 }
 
 export default Card;

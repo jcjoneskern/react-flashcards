@@ -9,13 +9,15 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case "NEXT_CARD":
+            disableNext(state);
             return Object.assign({}, state, {
-                currentIndex: state.currentIndex++,
+                currentIndex: state.currentIndex + 1,
                 showFront: true
             });
         case "PREV_CARD":
+            disablePrev(state);
             return Object.assign({}, state, {
-                currentIndex: state.currentIndex--,
+                currentIndex: state.currentIndex - 1,
                 showFront: true
             });
         case "FLIP_CARD":
@@ -33,8 +35,9 @@ const reducer = (state = INITIAL_STATE, action) => {
     }
 }
 
+// shuffle array of cards
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -47,5 +50,23 @@ function shuffle(array) {
     return array;
 }
 
+// test if you can go back
+function disablePrev(state) {
+    if (state.currentIndex <= 0) {
+        return true
+    } else {
+        return false;
+    }
+}
 
-export default reducer;
+// test if you can go forward
+function disableNext(state) {
+    if (state.currentIndex >= (state.cards.length - 1)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+export { reducer as default, disablePrev, disableNext } ;
